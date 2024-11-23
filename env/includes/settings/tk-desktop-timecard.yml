@@ -1,0 +1,25 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+
+################################################################################
+
+
+
+################################################################################
+
+# ---- Stand alone publish
+
+#tk-desktop-timecard
+settings.tk-desktop-timecard.standalone:
+  location:
+    #name: tk-desktop-timecard
+    type: git
+    path: https://github.com/onetera/tk-desktop-timecard.git
+    version: v1.0.9

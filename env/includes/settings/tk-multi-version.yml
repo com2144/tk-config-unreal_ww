@@ -1,0 +1,25 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+
+################################################################################
+
+
+
+################################################################################
+
+# ---- Stand alone publish
+
+#tk-multi-version
+settings.tk-multi-version.standalone:
+  location:
+    name: tk-multi-version
+    type: git
+    path: http://10.0.25.51:3000/parksunjun_remote/tk-multi-version.git
+    version: v1.0.0
