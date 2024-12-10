@@ -55,13 +55,16 @@ paths:
     # No context info used in template, developers expected to further customize
     unreal.asset_publish:
         definition: 'assets/unreal/exports/{YYYY}_{MM}_{DD}/{name}.fbx'
+
 strings:
    # entity-specific templates for importing files into the Unreal content browser
     # template logic is defined in Python, not settings:
     # tk-unreal/hooks/tk-multi-loader2/tk-unreal_actions.py
-    unreal_loader_asset_path: "/Game/Assets/{ue_sg_asset_type}/{ue_sg_asset_name}/"
-    unreal_loader_asset_name: "{ue_sg_asset_name}_{name}"
-    unreal_loader_shot_path: "/Game/Cinematics/Sequences/{ue_sg_sequence_name}/{ue_sg_shot_name}/"
-    unreal_loader_shot_name: "{ue_sg_shot_name}_{name}"
-    unreal_loader_project_path: "/Game/Assets/"
-    unreal_loader_project_name: "{name}"
+    unreal_loader_asset_path: "/Game/Assets/"
+    unreal_loader_asset_name: "{ue_sg_asset_name}"
+    
+    unreal_loader_shot_path: "/Game/Cinematics/LevelSequence/{ue_sg_sequence_name}/{ue_sg_shot_name}/"
+    unreal_loader_shot_name: "{ue_sg_sequence_name}_{ue_sg_shot_name}"
+
+    unreal_loader_project_path: "/Game/Assets/Others" # Path가 겹치면 안됩니다
+    unreal_loader_project_name: "_{ue_sg_asset_name}" # Name이 겹치면 안됩니다
