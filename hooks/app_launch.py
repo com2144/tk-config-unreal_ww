@@ -19,6 +19,7 @@ import sys
 import subprocess
 import platform
 import tank
+import shutil
 
 
 
@@ -57,6 +58,7 @@ class AppLaunch(tank.Hook):
         :returns: (dict) The two valid keys are 'command' (str) and 'return_code' (int).
         """
 
+
         system = platform.system()
 
         app_name = ENGINES[engine_name]
@@ -68,9 +70,11 @@ class AppLaunch(tank.Hook):
 
         depart_confirm = False
 
-        if (depart['name'] == 'RND' and engine_name == 'tk-nuke') or depart['name'] in ['General']:
-            depart_confirm = True
-
+        if depart is not None:
+            if (depart['name'] == 'RND' and engine_name == 'tk-nuke') or depart['name'] in ['General']:
+                depart_confirm = True
+        else:
+            self.parent.log_debug("No department found for user: %s" % user)
 
         if sys.version_info.major == 3 and app_name == 'unreal' and system == 'Windows':
             now_dir = os.path.dirname(os.path.abspath(__file__))
@@ -78,7 +82,26 @@ class AppLaunch(tank.Hook):
 
             sys.path.append(packages)
 
+            external_paths = [
+                "external_path3",
+                packages
+            ]
+
+            new_paths = os.pathsep.join(external_paths)
+
+            if 'UE_PYTHONPATH' in os.environ:
+                os.environ['UE_PYTHONPATH'] += os.pathsep + new_paths
+            else:
+                os.environ['UE_PYTHONPATH'] = new_paths
+
+            self.parent.log_debug("UNREAL ENGINE will be launched at WINDOWS OS")
+            self.parent.log_debug("HOOKS_APP_LAUNCH Updated Unreal Python paths:")
+            self.parent.log_debug("UE_PYTHONPATH: %s" % os.environ['UE_PYTHONPATH'])
+            self.parent.log_debug("sys.path: %s" % sys.path)
+
+
         if depart_confirm:
+            
             adapter = get_adapter(platform.system())
             packages = get_rez_packages(sg, app_name, version, system, project)
 

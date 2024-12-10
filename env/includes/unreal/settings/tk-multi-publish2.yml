@@ -10,7 +10,7 @@ includes:
 - ../../app_locations.yml
 
 settings.tk-multi-publish2.unreal.project:
-  collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
+  collector: "{self}/collector.py:{config}/tk-multi-publish2/unreal/collector.py"
   publish_plugins:
   - name: Publish to ShotGrid
     hook: "{self}/publish_file.py"
