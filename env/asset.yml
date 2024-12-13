@@ -50,7 +50,6 @@ engines:
   tk-alias: "@settings.tk-alias.asset"
   tk-vred: "@settings.tk-vred.asset"
   tk-shell: "@settings.tk-shell.asset"
-  tk-shotgun: "@settings.tk-shotgun.asset"
 
 ################################################################################
 # reference all of the common frameworks
