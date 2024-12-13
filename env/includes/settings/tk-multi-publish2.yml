@@ -168,20 +168,11 @@ settings.tk-multi-publish2.maya.asset_step:
   - name: Publish to Flow Production Tracking
     hook: "{self}/publish_file.py"
     settings: {}
-  - name: Upload for review
-    hook: "{self}/upload_version.py"
-    settings: {}
-  - name: Begin file versioning
-    hook: "{engine}/tk-multi-publish2/basic/start_version_control.py"
-    settings: {}
-  - name: Publish to Flow Production Tracking
-    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
+  - name: Export FBX for Unreal
+    hook: "{self}/publish_file.py:{config}/tk-multi-publish2/basic/maya_publish_asset.py"
     settings:
-        Publish Template: maya_asset_publish
-  - name: Publish to Flow Production Tracking
-    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
-    settings:
-        Publish Template: asset_alembic_cache
+      Publish Template: maya_asset_publish
+      Publish Folder: ""
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 
@@ -204,6 +195,10 @@ settings.tk-multi-publish2.maya.shot_step:
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
     settings:
         Publish Template: maya_shot_publish
+  - name: Export FBX for Unreal
+    hook: "{config}/tk-multi-publish2/basic/publish_asset.py"
+    settings:
+        Publish Template: maya_shot_fbx
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 

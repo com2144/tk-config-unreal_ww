@@ -6,7 +6,14 @@ primary:
   default: true
   linux_path: /show
   mac_path: /show
-  shotgun_storage_id: 236
-  windows_path: C:\show
+  shotgun_storage_id: 3
+  windows_path: C:/show
+
+# test_unreal:
+#   default: false
+#   linux_path: /show
+#   mac_path: /show
+#   shotgun_storage_id: 4
+#   windows_path: C:/show/test_unreal
 
 # End of file.

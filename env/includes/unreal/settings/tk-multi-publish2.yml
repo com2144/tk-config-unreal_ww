@@ -19,18 +19,31 @@ settings.tk-multi-publish2.unreal.project:
     hook: "{self}/upload_version.py"
     settings: {}
   - name: Publish to ShotGrid
-    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
+    hook: "{self}/publish_file.py:{config}/tk-multi-publish2/unreal/publish_session.py"
     settings: {}
   - name: Export FBX and Publish to ShotGrid
-    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_asset.py"
+    hook: "{self}/publish_file.py:{config}/tk-multi-publish2/unreal/publish_asset.py"
     settings:
         Publish Template: unreal.asset_publish
   - name: Render Movie and Submit for Review
-    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_movie.py"
+    hook: "{self}/publish_file.py:{config}/tk-multi-publish2/unreal/publish_movie.py"
     settings:
         Publish Template: unreal.movie_publish
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
+
+# settings.tk-multi-publish2.unreal.asset_step:
+#   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py"
+#   collector_settings:
+#       Work Template: unreal_asset_work
+#   publish_plugins:
+#   - name: Publish Unreal Asset
+#     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_asset.py"
+#     settings:
+#         Publish Template: unreal.asset_publish
+#         Template Fields:
+#             Step: "{Step}"
+#             Asset: "{Asset}"
 
 settings.tk-multi-publish2.maya.asset_step.unreal:
   collector: "{self}/collector.py:{engine}/tk-multi-publish2/basic/collector.py:{tk-framework-unrealqt_v1.x.x}/tk-multi-publish2/tk-maya/basic/collector.py"
@@ -44,7 +57,7 @@ settings.tk-multi-publish2.maya.asset_step.unreal:
     hook: "{self}/upload_version.py"
     settings: {}
   - name: Begin file versioning
-    hook: "{engine}/tk-multi-publish2/basic/start_version_control.py"
+    hook: "{config}/hooks/tk-multi-publish2/basic/start_version_control.py"
     settings: {}
   - name: Publish to ShotGrid
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"

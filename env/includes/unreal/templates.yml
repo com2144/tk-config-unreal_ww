@@ -33,9 +33,12 @@ keys:
             avi: Audio Video Interleaved (.avi)
 
 paths:
- #
+    #
     # Unreal
     #
+    # Unreal asset work files
+    unreal_asset_work:
+        definition: '@asset_root/dev/unreal/{name}.v{version}.fbx'
 
     # level sequence review output from unreal
     unreal.movie_publish:
@@ -44,17 +47,16 @@ paths:
         definition: '@shot_root/pub/unreal/{name}.v{version}.nk'
     # The location of FBX exports for Unreal
     unreal.maya_asset_fbx_publish:
-        definition: '@asset_root/pub/fbx/{name}.v{version}.fbx'
+        definition: '@asset_root/pub/maya_jh/fbx/{name}.v{version}.fbx'
     # The location of turntable review output rendered in Unreal
     unreal.maya_turntable_render:
         definition: '@asset_root/dev/images/{name}_turntable_v{version}.{ue_mov_ext}'
+    # The location of turntable review output published in Unreal
     unreal.maya_turntable_publish:
-        definition: '@asset_root/review/{Asset}_{name}_turntable_v{version}.{ue_mov_ext}'
-    # Placeholder location for static mesh assets exported from Unreal
-    # Hook implementation intended to be a starting point for a pipeline
-    # No context info used in template, developers expected to further customize
+        definition: '@asset_root/review/images/{name}_turntable_v{version}.{ue_mov_ext}'
+    # The location of published assets from Unreal
     unreal.asset_publish:
-        definition: 'assets/unreal/exports/{YYYY}_{MM}_{DD}/{name}.fbx'
+        definition: '@asset_root/pub/unreal/{Step}/{Asset}_{name}_v{version}.fbx'
 
 strings:
    # entity-specific templates for importing files into the Unreal content browser
