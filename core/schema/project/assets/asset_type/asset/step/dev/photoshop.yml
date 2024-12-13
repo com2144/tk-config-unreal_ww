@@ -13,3 +13,16 @@ type: "static"
 
 # defer creation and only create this folder when Photoshop starts
 defer_creation: "tk-photoshopcc"
+
+# define allowed extensions
+keys:
+    extension:
+        type: str
+        description: "File extension for Photoshop files"
+        values:
+            - psd
+            - psb
+            - jpg
+            - png
+            - tif
+            - tiff

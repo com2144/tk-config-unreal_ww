@@ -33,3 +33,5 @@ settings.tk-unreal.project:
   - {app_instance: tk-multi-shotgunpanel, name: ''}
   launch_builtin_plugins: [basic]
   automatic_context_switch: false
+  hook_load_fbx: "{self}/hooks/load_fbx.py"
+  hook_publish_asset: "{self}/hooks/tk-multi-publish2/basic/publish_asset.py"
