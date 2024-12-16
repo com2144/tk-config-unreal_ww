@@ -145,7 +145,7 @@ class UnrealActions(HookBaseClass):
         # Other entities fall back to Project
         if context.entity is None:
             destination_template = self.sgtk.templates["unreal_loader_project_path"]
-            destination_name_template = self.sgtk.templates["unreal_loader_project_name"]
+            destination_name_template = self.sgtk.templates["unreal_loader_asset_name"]
 
         elif context.entity["type"] == "Asset":
             destination_template = self.sgtk.templates["unreal_loader_asset_path"]
@@ -157,7 +157,7 @@ class UnrealActions(HookBaseClass):
 
         else:
             destination_template = self.sgtk.templates["unreal_loader_project_path"]
-            destination_name_template = self.sgtk.templates["unreal_loader_project_name"]
+            destination_name_template = self.sgtk.templates["unreal_loader_asset_name"]
 
 
         # Get the name field from the Publish Data

@@ -31,7 +31,7 @@ def add_content_browser_menu():
     
     command_string = """
 import unreal
-unreal.log("********** Shot Folder Creation **********")
+unreal.log("========== Shot Folder Creation ==========")
 
 import create_shot_directory
 create_shot_directory.main()
