@@ -17,11 +17,14 @@ SequenceEdit = namedtuple("SequenceEdit", ["sequence", "track", "section"])
 
 HookBaseClass = sgtk.get_hook_baseclass()
 
+<<<<<<< HEAD
 print("COLLECTOR LOADING")
 if 'WONJIN_COLLECTOR' in os.environ:
     os.environ['WONJIN_COLLECTOR'] += os.pathsep + 'COLLECTOR_LOADING'
 else:
     os.environ['WONJIN_COLLECTOR'] = 'COLLECTOR_LOADING'
+=======
+>>>>>>> master
 class UnrealSessionCollector(HookBaseClass):
     """
     Collector that operates on the Unreal session. Should inherit from the basic
@@ -35,11 +38,14 @@ class UnrealSessionCollector(HookBaseClass):
     """
     def __init__(self, *args, **kwargs):
         super(UnrealSessionCollector, self).__init__(*args, **kwargs)
+<<<<<<< HEAD
         print("COLLECTOR INIT")
         if 'WONJIN_COLLECTOR' in os.environ:
             os.environ['WONJIN_COLLECTOR'] += os.pathsep + 'COLLECTOR_INIT'
         else:
             os.environ['WONJIN_COLLECTOR'] = 'COLLECTOR_INIT'
+=======
+>>>>>>> master
             
     @property
     def settings(self):

@@ -5,12 +5,15 @@
 import sgtk
 import os
 HookBaseClass = sgtk.get_hook_baseclass()
+<<<<<<< HEAD
 
 print("PUBLISH_SESSION LOADING")
 if 'WONJIN_PUBLISH_SESSION' in os.environ:
     os.environ['WONJIN_PUBLISH_SESSION'] += os.pathsep + 'PUBLISH_SESSION_LOADING'
 else:
     os.environ['WONJIN_PUBLISH_SESSION'] = 'PUBLISH_SESSION_LOADING'
+=======
+>>>>>>> master
 class UnrealSessionPublishPlugin(HookBaseClass):
     """
     Plugin for publishing an open Unreal session.
@@ -26,11 +29,14 @@ class UnrealSessionPublishPlugin(HookBaseClass):
     """
     def __init__(self, *args, **kwargs):
         super(UnrealSessionPublishPlugin, self).__init__(*args, **kwargs)
+<<<<<<< HEAD
         print("PUBLISH_SESSION INIT")
         if 'WONJIN_PUBLISH_SESSION' in os.environ:
             os.environ['WONJIN_PUBLISH_SESSION'] += os.pathsep + 'PUBLISH_SESSION_INIT'
         else:
             os.environ['WONJIN_PUBLISH_SESSION'] = 'PUBLISH_SESSION_INIT'
+=======
+>>>>>>> master
     # NOTE: The plugin icon and name are defined by the base file plugin.
 
     @property

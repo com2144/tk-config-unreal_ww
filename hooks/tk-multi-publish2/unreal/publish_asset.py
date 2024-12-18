@@ -19,6 +19,7 @@ _OS_LOCAL_STORAGE_PATH_FIELD = {
 
 
 HookBaseClass = sgtk.get_hook_baseclass()
+<<<<<<< HEAD
 
 print("PUBLISH_ASSET LOADING")
 if 'WONJIN_PUBLISH_ASSET' in os.environ:
@@ -26,6 +27,8 @@ if 'WONJIN_PUBLISH_ASSET' in os.environ:
 else:
     os.environ['WONJIN_PUBLISH_ASSET'] = 'PUBLISH_ASSET_LOADING'
 
+=======
+>>>>>>> master
 class UnrealAssetPublishPlugin(HookBaseClass):
     """
     Plugin for publishing an Unreal asset.
@@ -41,11 +44,14 @@ class UnrealAssetPublishPlugin(HookBaseClass):
     """
     def __init__(self, *args, **kwargs):
         super(UnrealAssetPublishPlugin, self).__init__(*args, **kwargs)
+<<<<<<< HEAD
         print("PUBLISH_ASSET INIT")
         if 'WONJIN_PUBLISH_ASSET' in os.environ:
             os.environ['WONJIN_PUBLISH_ASSET'] += os.pathsep + 'PUBLISH_ASSET_INIT'
         else:
             os.environ['WONJIN_PUBLISH_ASSET'] = 'PUBLISH_ASSET_INIT'
+=======
+>>>>>>> master
             
     # NOTE: The plugin icon and name are defined by the base file plugin.
 

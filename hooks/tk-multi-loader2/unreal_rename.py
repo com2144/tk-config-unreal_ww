@@ -42,7 +42,15 @@ def get_new_name_and_path(asset_class, original_path):
             'prefix': 'BP_',
             'path': '/Game/Assets/BP/',
         },
+<<<<<<< HEAD
         'AnimSequence': {
+=======
+        'AnimSequence': { # UE 5.4
+            'prefix': 'AS_',
+            'path': '/Game/Assets/AS/',
+        },
+        'AnimationSequence': { # UE 5.5
+>>>>>>> master
             'prefix': 'AS_',
             'path': '/Game/Assets/AS/',
         },
@@ -50,7 +58,15 @@ def get_new_name_and_path(asset_class, original_path):
             'prefix': 'ABP_',
             'path': '/Game/Assets/AS/ABP/',
         },
+<<<<<<< HEAD
         'ParticleSystem': {
+=======
+        'ParticleSystem': { # UE 5.4
+            'prefix': 'NS_',
+            'path': '/Game/Assets/NS/',
+        },
+        'NiagaraSystem': {  # UE 5.5
+>>>>>>> master
             'prefix': 'NS_',
             'path': '/Game/Assets/NS/',
         }
