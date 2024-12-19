@@ -93,7 +93,7 @@ class AppLaunch(tank.Hook):
         # Add directory with init_unreal.py to UE_PYTHONPATH before running the app
         if app_name == 'unreal':
             current_dir = os.path.abspath(os.path.dirname(__file__))
-            unreal_python_dir = os.path.join(current_dir, "app_launch")
+            unreal_python_dir = os.path.join(current_dir, "unreal_launch")
             
             if 'UE_PYTHONPATH' in os.environ:
                 os.environ['UE_PYTHONPATH'] += os.pathsep + unreal_python_dir
@@ -101,7 +101,7 @@ class AppLaunch(tank.Hook):
                 os.environ['UE_PYTHONPATH'] = unreal_python_dir
 
             self.parent.log_debug("UNREAL ENGINE will be launched at WINDOWS OS")
-            self.parent.log_debug("HOOKS_APP_LAUNCH Updated Unreal Python paths:")
+            self.parent.log_debug("HOOKS_UNREAL_LAUNCH Updated Unreal Python paths:")
             self.parent.log_debug("UE_PYTHONPATH: %s" % os.environ['UE_PYTHONPATH'])
             self.parent.log_debug("sys.path: %s" % sys.path)
 
@@ -175,8 +175,7 @@ def get_rez_packages(sg, app_name, version, system, project):
     if system == 'Linux':
         filter_dict = [
             ['code','is',app_name.title()+" "+version],
-            ['projects','in',project],
-            ['-NoLoadStartupDialog']
+            ['projects','in',project]
         ]
         packages = sg.find("Software",filter_dict,['sg_rez'])
         if packages : 
@@ -184,8 +183,7 @@ def get_rez_packages(sg, app_name, version, system, project):
         else:
             filter_dict = [
                 ['code','is',app_name.title()+" "+version],
-                ['projects','is',None],
-                ['-NoLoadStartupDialog']
+                ['projects','is',None]
             ]
             packages = sg.find("Software",filter_dict,['sg_rez'])
             if packages:
@@ -194,8 +192,7 @@ def get_rez_packages(sg, app_name, version, system, project):
     else:
         filter_dict = [
             ['code','is',app_name.title()+" "+version],
-            ['projects','in',project],
-            ['-NoLoadStartupDialog']
+            ['projects','in',project]
         ]
         packages = sg.find("Software",filter_dict,['sg_win_rez'])
         if packages : 
@@ -203,8 +200,7 @@ def get_rez_packages(sg, app_name, version, system, project):
         else:
             filter_dict = [
                 ['code','is',app_name.title()+" "+version],
-                ['projects','is',None],
-                ['-NoLoadStartupDialog']
+                ['projects','is',None]
             ]
             packages = sg.find("Software",filter_dict,['sg_win_rez'])
             if packages:
